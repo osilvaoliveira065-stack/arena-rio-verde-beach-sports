@@ -8,7 +8,7 @@ import Inscricao from "@/components/Inscricao"
 import Novidades from "@/components/Novidades"
 import Localizacao from "@/components/Localizacao"
 import Footer from "@/components/Footer"
-import WhatsAppButton from "@/components/Whatsappbutton"
+import WhatsAppButton from "@/components/Whatsapp-button"
 
 export default function Page() {
   return (
