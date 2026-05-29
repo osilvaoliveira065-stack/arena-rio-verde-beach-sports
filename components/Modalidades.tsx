@@ -2,6 +2,7 @@
 
 import { useEffect, useRef } from "react"
 import { ArrowRight } from "lucide-react"
+import Image from "next/image"
 
 const modalidades = [
   {
@@ -9,34 +10,45 @@ const modalidades = [
     name: "Futevôlei",
     tagline: "O futebol que vai às alturas",
     description:
-      "A mistura perfeita entre futebol e vôlei. Técnica, habilidade e muita adrenalina em cada ponto. Uma das modalidades que mais cresce no Brasil, com treinos para todos os níveis.",
-    highlights: ["Treinos individuais e em grupo", "Técnica e tática avançada", "Preparação para torneios"],
-    image:
-      "https://placehold.co/700x500?text=Atleta+executando+jogada+acrobática+de+futevôlei+na+areia+com+agilidade+e+técnica+em+quadra+profissional+ao+entardecer",
+      "A mistura perfeita entre futebol e vôlei...",
+    highlights: [
+      "Treinos individuais e em grupo",
+      "Técnica e tática avançada",
+      "Preparação para torneios",
+    ],
+    image: "/images/fut.png",
     color: "#22c55e",
     number: "01",
   },
+
   {
     id: "beachtennis",
     name: "Beach Tennis",
     tagline: "Velocidade e precisão na areia",
     description:
-      "O esporte da moda! Praticado em duplas na areia, combina elementos do tênis e do vôlei de praia. Ótimo para condicionamento físico e socialização.",
-    highlights: ["Equipamentos disponíveis", "Aulas para iniciantes", "Campeonatos mensais"],
-    image:
-      "https://placehold.co/700x500?text=Dupla+de+atletas+jogando+beach+tennis+em+quadra+de+areia+sob+sol+forte+com+raquetes+e+rede+profissional",
+      "O esporte da moda!...",
+    highlights: [
+      "Equipamentos disponíveis",
+      "Aulas para iniciantes",
+      "Campeonatos mensais",
+    ],
+    image: "/images/beach.png",
     color: "#4ade80",
     number: "02",
   },
+
   {
     id: "beachvolley",
     name: "Beach Volley",
     tagline: "Clássico e apaixonante",
     description:
-      "O esporte olímpico da areia! Trabalho em equipe, força e fôlego. Disputas emocionantes e treinos completos para elevar seu nível no vôlei de praia.",
-    highlights: ["Turmas por nível", "Treinos funcionais", "Amistosos e torneios"],
-    image:
-      "https://placehold.co/700x500?text=Jogadores+de+beach+volley+em+ação+saltando+para+bloquear+com+areia+ao+redor+em+quadra+profissional+iluminada",
+      "O esporte olímpico da areia!...",
+    highlights: [
+      "Turmas por nível",
+      "Treinos funcionais",
+      "Amistosos e torneios",
+    ],
+    image: "/images/vollei.png",
     color: "#86efac",
     number: "03",
   },
@@ -112,11 +124,12 @@ export default function Modalidades() {
             >
               {/* Image */}
               <div className="relative overflow-hidden aspect-[16/10] lg:aspect-auto min-h-[280px]">
-                <img
-                  src={mod.image}
-                  alt={`${mod.name} - Modalidade esportiva na Arena Rio Verde Beach Sports`}
-                  className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105"
-                />
+                <Image
+  src={mod.image}
+  alt={mod.name}
+  fill
+  className="object-cover transition-transform duration-700 group-hover:scale-105"
+/>
                 <div className="absolute inset-0 bg-gradient-to-t lg:bg-gradient-to-r from-arena-bg/90 via-arena-bg/30 to-transparent" />
                 {/* Number */}
                 <span className="absolute top-6 left-6 font-display font-black text-6xl text-arena-white/10 select-none leading-none">
