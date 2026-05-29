@@ -8,6 +8,24 @@ module.exports = {
   ],
   theme: {
     extend: {
+
+      animation: {
+  loader: "loader 1.2s infinite ease-in-out",
+},
+
+keyframes: {
+  loader: {
+    "0%": {
+      transform: "translateX(-100%)",
+    },
+    "50%": {
+      transform: "translateX(200%)",
+    },
+    "100%": {
+      transform: "translateX(-100%)",
+    },
+  },
+},
       colors: {
         background: 'hsl(var(--background))',
         foreground: 'hsl(var(--foreground))',
