@@ -2,6 +2,26 @@
 
 import { useEffect, useRef } from "react"
 import { UtensilsCrossed, Beer, Flame, Coffee, Sandwich, Users } from "lucide-react"
+import Image from "next/image"
+
+const galleryImages = [
+  {
+    src: "/images/bar1.jpg",
+    alt: "Lanche artesanal",
+  },
+  {
+    src: "/images/bar2.jpg",
+    alt: "Drinks e bebidas",
+  },
+  {
+    src: "/images/bar3.jpg",
+    alt: "Churrasqueira",
+  },
+  {
+    src: "/images/bar4.jpg",
+    alt: "Ambiente social",
+  },
+]
 
 const itens = [
   { icon: Sandwich, label: "Lanches", desc: "Hambúrgueres artesanais, wraps e muito mais" },
@@ -101,40 +121,68 @@ export default function Bar() {
           </div>
 
           {/* Right: Images */}
-          <div className="section-fade grid grid-cols-2 gap-4">
-            <div className="flex flex-col gap-4">
-              <div className="rounded-2xl overflow-hidden aspect-[3/4] border border-arena-border">
-                <img
-                  src="https://placehold.co/400x533?text=Lanche+artesanal+gourmet+hamburguer+com+batatas+fritas+servido+em+tábua+rústica+no+bar+esportivo"
-                  alt="Lanche artesanal do bar da Arena"
-                  className="w-full h-full object-cover hover:scale-105 transition-transform duration-500"
-                />
-              </div>
-              <div className="rounded-2xl overflow-hidden aspect-square border border-arena-border">
-                <img
-                  src="https://placehold.co/400x400?text=Bebidas+geladas+e+drinks+coloridos+em+balcao+de+bar+esportivo+moderno+ao+ar+livre"
-                  alt="Bebidas geladas e drinks no bar"
-                  className="w-full h-full object-cover hover:scale-105 transition-transform duration-500"
-                />
-              </div>
-            </div>
-            <div className="flex flex-col gap-4 pt-8">
-              <div className="rounded-2xl overflow-hidden aspect-square border border-arena-border">
-                <img
-                  src="https://placehold.co/400x400?text=Churrasco+na+brasa+com+carnes+e+espetinhos+na+churrasqueira+ao+ar+livre+em+ambiente+festivo"
-                  alt="Churrasqueira com carnes e espetinhos"
-                  className="w-full h-full object-cover hover:scale-105 transition-transform duration-500"
-                />
-              </div>
-              <div className="rounded-2xl overflow-hidden aspect-[3/4] border border-arena-border">
-                <img
-                  src="https://placehold.co/400x533?text=Ambiente+social+animado+com+pessoas+celebrando+e+confraternizando+em+area+de+lazer+esportiva"
-                  alt="Ambiente social e confraternização na arena"
-                  className="w-full h-full object-cover hover:scale-105 transition-transform duration-500"
-                />
-              </div>
-            </div>
-          </div>
+          {/* Right: Images */}
+<div className="section-fade grid grid-cols-2 gap-4">
+
+  {/* Coluna esquerda */}
+  <div className="flex flex-col gap-4">
+
+    {/* Imagem 1 */}
+    <div className="relative rounded-2xl overflow-hidden aspect-[3/4] border border-arena-border group">
+      <Image
+        src={galleryImages[0].src}
+        alt={galleryImages[0].alt}
+        fill
+        className="object-cover group-hover:scale-105 transition-transform duration-700"
+      />
+
+      <div className="absolute inset-0 bg-black/20" />
+    </div>
+
+    {/* Imagem 2 */}
+    <div className="relative rounded-2xl overflow-hidden aspect-square border border-arena-border group">
+      <Image
+        src={galleryImages[1].src}
+        alt={galleryImages[1].alt}
+        fill
+        className="object-cover group-hover:scale-105 transition-transform duration-700"
+      />
+
+      <div className="absolute inset-0 bg-black/20" />
+    </div>
+
+  </div>
+
+  {/* Coluna direita */}
+  <div className="flex flex-col gap-4 pt-8">
+
+    {/* Imagem 3 */}
+    <div className="relative rounded-2xl overflow-hidden aspect-square border border-arena-border group">
+      <Image
+        src={galleryImages[2].src}
+        alt={galleryImages[2].alt}
+        fill
+        className="object-cover group-hover:scale-105 transition-transform duration-700"
+      />
+
+      <div className="absolute inset-0 bg-black/20" />
+    </div>
+
+    {/* Imagem 4 */}
+    <div className="relative rounded-2xl overflow-hidden aspect-[3/4] border border-arena-border group">
+      <Image
+        src={galleryImages[3].src}
+        alt={galleryImages[3].alt}
+        fill
+        className="object-cover group-hover:scale-105 transition-transform duration-700"
+      />
+
+      <div className="absolute inset-0 bg-black/20" />
+    </div>
+
+  </div>
+
+</div>
         </div>
       </div>
     </section>
