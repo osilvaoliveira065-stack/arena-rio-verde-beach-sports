@@ -7,7 +7,7 @@ import app from "@/lib/firebase";
 
 const db = getFirestore(app);
 
-const WHATSAPP_NUMBER = "5513988434687"
+const WHATSAPP_NUMBER = "5519997089898"
 
 const modalidadesOptions = [
   { value: "", label: "Selecione uma modalidade" },
@@ -89,15 +89,35 @@ const handleSubmit = async (e: React.FormEvent) => {
   }
 
     const modalidadeLabel =
-      modalidadesOptions.find((m) => m.value === form.modalidade)?.label || form.modalidade
+  modalidadesOptions.find((m) => m.value === form.modalidade)?.label ||
+  form.modalidade;
 
-    const message = encodeURIComponent(
-      `Olá! Quero me inscrever na Arena Rio Verde Beach Sports! 🏐\n\n` +
-        `*Nome:* ${form.nome}\n` +
-        `*Telefone:* ${form.telefone}\n` +
-        `*Modalidade:* ${modalidadeLabel}\n` +
-        (form.mensagem ? `*Mensagem:* ${form.mensagem}` : "")
-    )
+const text = `
+Olá! Tenho interesse em me inscrever na Arena Rio Verde Beach Sports.
+
+\u{1F4CC} *Nome:* ${form.nome}
+\u{1F4DE} *Telefone:* ${form.telefone}
+\u{1F3D0} *Modalidade:* ${modalidadeLabel}
+
+\u{1F4AC} *Mensagem:*
+Gostaria de obter mais informações sobre as aulas/treinos e realizar minha inscrição.
+
+${form.mensagem ? `\u{1F4DD} *Observações:* ${form.mensagem}` : ""}
+
+Obrigado!
+`.trim();
+
+// força UTF-8 corretamente
+const message = new URLSearchParams({
+  text,
+}).toString();
+
+window.open(
+  `https://api.whatsapp.com/send?phone=${WHATSAPP_NUMBER}&${message}`,
+  "_blank"
+);
+
+setSubmitted(true);
 
     window.open(`https://wa.me/${WHATSAPP_NUMBER}?text=${message}`, "_blank")
     setSubmitted(true)
