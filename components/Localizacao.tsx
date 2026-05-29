@@ -144,12 +144,12 @@ export default function Localizacao() {
                     Contato
                   </p>
                   <a
-                    href="https://wa.me/5519999999999"
+                    href="https://wa.me/5519997089898"
                     target="_blank"
                     rel="noopener noreferrer"
                     className="font-sans text-arena-white/70 text-sm hover:text-arena-green transition-colors"
                   >
-                    (19) 9 9999-9999
+                    (19) 9 9708 9898
                   </a>
                 </div>
               </div>
