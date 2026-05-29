@@ -2,8 +2,8 @@
 
 import { MapPin, Instagram, ArrowUp } from "lucide-react"
 
-const WHATSAPP_NUMBER = "5513988434687"
-const INSTAGRAM_URL = "https://instagram.com/arenariverdebeachsports"
+const WHATSAPP_NUMBER = "5519997089898"
+const INSTAGRAM_URL = "https://www.instagram.com/arenarioverde/"
 
 const links = [
   { label: "Início", href: "#hero" },
@@ -83,7 +83,7 @@ export default function Footer() {
             </p>
             <div className="flex flex-col gap-3">
               <a
-                href={`https://wa.me/${WHATSAPP_NUMBER}`}
+                href={`https://wa.me/5519997089898`}
                 target="_blank"
                 rel="noopener noreferrer"
                 className="flex items-center gap-3 group"
@@ -94,7 +94,7 @@ export default function Footer() {
                   </svg>
                 </div>
                 <span className="font-sans text-arena-white/60 text-sm group-hover:text-arena-green transition-colors">
-                  (13) 9 8843-4687
+                  (19) 9 9078-9898
                 </span>
               </a>
 
