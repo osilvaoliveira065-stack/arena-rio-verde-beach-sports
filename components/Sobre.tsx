@@ -2,6 +2,14 @@
 
 import { useEffect, useRef } from "react"
 import { Waves, Flame, Users, Trophy, Star, MapPin } from "lucide-react"
+import Image from "next/image"
+
+const images = [
+  {
+    image: "/images/nigth.png",
+    name: "Quadra Principal",
+  },
+]
 
 const features = [
   {
@@ -102,15 +110,27 @@ export default function Sobre() {
             </div>
 
             {/* Image */}
-            <div className="relative">
-              <div className="relative rounded-3xl overflow-hidden aspect-[4/3] border border-arena-border">
-                <img
-                  src="https://placehold.co/800x600?text=Vista+aerea+de+quadras+de+beach+sports+com+areia+branca+e+iluminacao+profissional+noturna+em+complexo+esportivo+moderno"
-                  alt="Vista das quadras de areia da Arena Rio Verde Beach Sports"
-                  className="w-full h-full object-cover"
-                />
-                <div className="absolute inset-0 bg-gradient-to-t from-arena-bg/60 via-transparent to-transparent" />
+             <div className="relative">
+
+            <div className="relative h-[500px] rounded-[32px] overflow-hidden border border-white/10">
+
+              {images.map((mod, i) => (
+                <div
+                  key={i}
+                  className="absolute inset-0"
+                >
+                  <Image
+                    src={mod.image}
+                    alt={mod.name}
+                    fill
+                    className="object-cover"
+                  />
+
+                  <div className="absolute inset-0 bg-black/30" />
+                </div>
+              ))}
               </div>
+              
               {/* Floating badge */}
               <div className="absolute -bottom-5 -left-5 glass rounded-2xl p-4 border border-arena-green/20">
                 <p className="font-display font-black text-3xl text-arena-green leading-none">5+</p>
