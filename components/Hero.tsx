@@ -45,7 +45,7 @@ export default function Hero() {
     >
       {/* Background image */}
       <div className="absolute inset-0 z-0">
-        <img src="/beachtennis.png"  className="w-full h-full object-cover" />
+        <img src="/images/beachtennis.png"  className="w-full h-full object-cover" />
 
         {/* Dark overlays */}
         <div className="absolute inset-0 bg-gradient-to-b from-arena-bg/80 via-arena-bg/50 to-arena-bg/90" />
