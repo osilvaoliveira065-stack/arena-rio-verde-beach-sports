@@ -5,17 +5,6 @@ import { Calendar, ArrowRight, Tag } from "lucide-react"
 
 const noticias = [
   {
-    badge: "Torneio",
-    badgeColor: "#f59e0b",
-    title: "1º Torneio Arena Rio Verde de Beach Tennis",
-    excerpt:
-      "O aguardado torneio de abertura da temporada já tem data marcada! Participe e mostre seu talento nas quadras de areia. Inscrições abertas para duplas masculinas, femininas e mistas.",
-    date: "15 Maio 2025",
-    image:
-      "https://placehold.co/600x400?text=Banner+de+torneio+de+beach+tennis+com+troféu+e+quadras+de+areia+ao+fundo+em+evento+esportivo+profissional",
-    readTime: "2 min",
-  },
-  {
     badge: "Novidade",
     badgeColor: "#22c55e",
     title: "Novas Turmas de Futevôlei para Iniciantes",
@@ -23,7 +12,7 @@ const noticias = [
       "Nunca jogou futevôlei? Que ótimo! Abrimos novas turmas especialmente para iniciantes, com professor dedicado e horários na parte da manhã e à noite. Venha começar do zero!",
     date: "10 Maio 2025",
     image:
-      "https://placehold.co/600x400?text=Aula+inaugural+de+futevôlei+para+iniciantes+em+quadra+de+areia+com+professor+demonstrando+tecnica",
+      "/images/futevolei.jpg",
     readTime: "3 min",
   },
   {
@@ -34,7 +23,7 @@ const noticias = [
       "Uma noite especial com partidas temáticas, música ao vivo e muita diversão! Convidamos toda a comunidade para participar desse evento único que une esporte e entretenimento.",
     date: "5 Maio 2025",
     image:
-      "https://placehold.co/600x400?text=Noite+de+beach+volley+com+iluminacao+especial+musica+ao+vivo+e+publico+animado+na+arena+esportiva",
+      "/images/beachvolley.jpg",
     readTime: "2 min",
   },
   {
@@ -44,8 +33,7 @@ const noticias = [
     excerpt:
       "Aproveite o mês de Maio e garanta sua matrícula com desconto especial. Válido para todas as modalidades. Oferta por tempo limitado — corra e inscreva-se antes que acabe!",
     date: "1 Mai 2025",
-    image:
-      "https://placehold.co/600x400?text=Banner+promocional+com+50+porcento+de+desconto+na+matrícula+com+cores+vibrantes+e+layout+moderno",
+    image:"/images/matricula.jpg",
     readTime: "1 min",
   },
 ]
