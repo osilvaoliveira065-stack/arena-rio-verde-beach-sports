@@ -2,7 +2,7 @@
 
 import { useState, useEffect } from "react"
 
-const WHATSAPP_NUMBER = "5513988434687"
+const WHATSAPP_NUMBER = "5519997089898"
 const WHATSAPP_MESSAGE = encodeURIComponent(
   "Olá! Vim pelo site e gostaria de saber mais sobre a Arena Rio Verde Beach Sports!"
 )
