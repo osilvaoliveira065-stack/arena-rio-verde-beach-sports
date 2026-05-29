@@ -1,3 +1,7 @@
+"use client"
+
+import { useEffect, useState } from "react"
+
 import Navbar from "@/components/Navbar"
 import Hero from "@/components/Hero"
 import Sobre from "@/components/Sobre"
@@ -9,10 +13,26 @@ import Novidades from "@/components/Novidades"
 import Localizacao from "@/components/Localizacao"
 import Footer from "@/components/Footer"
 import WhatsAppButton from "@/components/Whatsapp-button"
+import Loader from "@/components/Loader"
 
 export default function Page() {
+  const [loading, setLoading] = useState(true)
+
+  useEffect(() => {
+    const timer = setTimeout(() => {
+      setLoading(false)
+    }, 2500)
+
+    return () => clearTimeout(timer)
+  }, [])
+
+  if (loading) {
+    return <Loader />
+  }
+
   return (
     <main className="bg-arena-bg text-arena-white">
+
       <Navbar />
       <Hero />
       <Sobre />
@@ -24,6 +44,7 @@ export default function Page() {
       <Localizacao />
       <Footer />
       <WhatsAppButton />
+
     </main>
   )
 }
