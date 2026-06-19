@@ -93,19 +93,86 @@ export default function Sobre() {
                 Nosso espaço foi pensado para oferecer a melhor experiência, seja num treino casual
                 com amigos ou numa competição acirrada. Aqui, todo mundo é bem-vindo.
               </p>
-              <div className="flex flex-wrap gap-3">
-                <div className="flex items-center gap-2 px-4 py-2 rounded-full bg-arena-surface-2 border border-arena-border">
+              <div className="grid sm:grid-cols-3 gap-4 mt-8">
+  <a
+    href="#inscricao"
+    className="group p-5 rounded-2xl bg-arena-surface border border-arena-border hover:border-arena-green/50 transition-all"
+  >
+    <p className="text-arena-green font-display font-bold text-sm uppercase mb-2">
+      Aluguel
+    </p>
+
+    <h3 className="font-display text-xl text-white mb-2">
+      Alugue uma Quadra
+    </h3>
+
+    <p className="text-white/60 text-sm">
+      Reserve horários para jogar com amigos ou realizar eventos.
+    </p>
+  </a>
+
+  <a
+    href="#inscricao"
+    className="group p-5 rounded-2xl bg-arena-surface border border-arena-border hover:border-arena-green/50 transition-all"
+  >
+    <p className="text-arena-green font-display font-bold text-sm uppercase mb-2">
+      Experimental
+    </p>
+
+    <h3 className="font-display text-xl text-white mb-2">
+      Aula Experimental
+    </h3>
+
+    <p className="text-white/60 text-sm">
+      Conheça a estrutura e experimente uma aula sem compromisso.
+    </p>
+  </a>
+
+  <a
+    href="#inscricao"
+    className="group p-5 rounded-2xl bg-arena-surface border border-arena-border hover:border-arena-green/50 transition-all"
+  >
+    <p className="text-arena-green font-display font-bold text-sm uppercase mb-2">
+      Aulas
+    </p>
+
+    <h3 className="font-display text-xl text-white mb-2">
+      Faça Parte das Turmas
+    </h3>
+
+    <p className="text-white/60 text-sm">
+      Treinos para iniciantes e atletas de todos os níveis.
+    </p>
+  </a>
+</div>
+              <div className="flex flex-wrap gap-3 mt-6">
+                <div className="flex items-center gap-2 px-4 py-2 rounded-full bg-arena-surface-4 border border-arena-border">
                   <span className="w-2 h-2 rounded-full bg-arena-green" />
                   <span className="font-display text-sm text-arena-white/80 tracking-wide">Futevôlei</span>
                 </div>
-                <div className="flex items-center gap-2 px-4 py-2 rounded-full bg-arena-surface-2 border border-arena-border">
+                <div className="flex items-center gap-2 px-4 py-2 rounded-full bg-arena-surface-4 border border-arena-border">
                   <span className="w-2 h-2 rounded-full bg-arena-green" />
                   <span className="font-display text-sm text-arena-white/80 tracking-wide">Beach Tennis</span>
                 </div>
-                <div className="flex items-center gap-2 px-4 py-2 rounded-full bg-arena-surface-2 border border-arena-border">
+                <div className="flex items-center gap-2 px-4 py-2 rounded-full bg-arena-surface-4 border border-arena-border">
                   <span className="w-2 h-2 rounded-full bg-arena-green" />
                   <span className="font-display text-sm text-arena-white/80 tracking-wide">Beach Volley</span>
                 </div>
+                <div className="flex flex-wrap gap-5 mt-6">
+  <a
+    href="#inscricao"
+    className="px-6 py-3 rounded-full bg-arena-green text-black font-bold"
+  >
+    Agendar Aula Experimental
+  </a>
+
+  <a
+    href="#inscricao"
+    className="px-6 py-3 rounded-full border border-arena-green/30 text-arena-green"
+  >
+    Ver Valores
+  </a>
+</div>
               </div>
             </div>
 
@@ -132,13 +199,13 @@ export default function Sobre() {
               </div>
               
               {/* Floating badge */}
-              <div className="absolute -bottom-5 -left-5 glass rounded-2xl p-4 border border-arena-green/20">
-                <p className="font-display font-black text-3xl text-arena-green leading-none">5+</p>
-                <p className="font-sans text-arena-white/60 text-xs mt-0.5">Anos de história</p>
+              <div className="absolute -bottom-5 -left-5 glass rounded-2xl p-4 border border-arena-green/10">
+                <p className="font-display font-black text-3xl text-arena-green leading-none">INAUGURAÇÃO</p>
+                <p className="font-sans text-arena-white/60 text-xs mt-0.5">11 de JULHO</p>
               </div>
-              <div className="absolute -top-5 -right-5 glass rounded-2xl p-4 border border-arena-green/20">
-                <p className="font-display font-black text-3xl text-arena-green leading-none">100%</p>
-                <p className="font-sans text-arena-white/60 text-xs mt-0.5">Satisfação</p>
+              <div className="absolute -top-3 -right-3 glass rounded-2xl p-4 border border-arena-green/10">
+                <p className="font-display font-black text-3xl text-arena-green leading-none">Aula Experimental</p>
+                <p className="font-sans text-arena-white/60 text-xs mt-0.5">Conheça a arena sem compromisso</p>
               </div>
             </div>
           </div>
@@ -167,6 +234,83 @@ export default function Sobre() {
             )
           })}
         </div>
+        {/* Horários */}
+<div className="mt-24">
+  <div className="text-center mb-24">
+    <span className="inline-flex items-center gap-2 px-4 py-2 rounded-full border border-arena-green/30 bg-arena-green/10">
+      <span className="w-2 h-2 rounded-full bg-arena-green" />
+      <span className="text-arena-green font-semibold uppercase tracking-widest text-xs">
+        Horários
+      </span>
+    </span>
+
+    <h2 className="mt-6 font-display font-black text-[clamp(2.5rem,5vw,4rem)] text-white uppercase">
+      Horário de Funcionamento
+    </h2>
+
+    <p className="text-white/60 mt-4 max-w-2xl mx-auto">
+      Confira os horários da Arena Rio Verde e programe seu treino.
+    </p>
+  </div>
+
+<div className="space-y-4">
+    
+    <div className="bg-arena-surface border border-arena-border rounded-2xl p-6 flex justify-between items-center flex-wrap gap-4 hover:border-arena-green/40 hover:shadow-[0_0_30px_rgba(34,197,94,0.15)] transition-all duration-300">
+      <div>
+        <h3 className="text-white font-bold text-xl">
+          Segunda à Sexta
+        </h3>
+      </div>
+      <div className="text-arena-green font-bold text-xl">
+        16h às 23h
+      </div>
+    </div>
+
+    <div className="bg-arena-surface border border-arena-border rounded-2xl p-6 flex justify-between items-center flex-wrap gap-4 hover:border-arena-green/40 hover:shadow-[0_0_30px_rgba(34,197,94,0.15)] transition-all duration-300">
+      <div>
+        <h3 className="text-white font-bold text-xl">
+          Sábado
+        </h3>
+      </div>
+      <div className="text-right">
+        <p className="text-arena-green font-bold">
+          08h às 12h
+        </p>
+        <p className="text-arena-green font-bold">
+          16h às 23h
+        </p>
+      </div>
+    </div>
+
+    <div className="bg-arena-surface border border-arena-border rounded-2xl p-6 flex justify-between items-center flex-wrap gap-4 hover:border-arena-green/40 hover:shadow-[0_0_30px_rgba(34,197,94,0.15)] transition-all duration-300">
+      <div>
+        <h3 className="text-white font-bold text-xl">
+          Feriados
+        </h3>
+      </div>
+      <div className="text-right">
+        <p className="text-arena-green font-bold">
+          08h às 12h
+        </p>
+        <p className="text-arena-green font-bold">
+          16h às 23h
+        </p>
+      </div>
+    </div>
+
+    <div className="bg-arena-surface border border-red-500/20 rounded-2xl p-6 flex justify-between items-center flex-wrap gap-4 hover:border-arena-green/40 hover:shadow-[0_0_30px_rgba(34,197,94,0.15)] transition-all duration-300">
+      <div>
+        <h3 className="text-white font-bold text-xl">
+          Domingo
+        </h3>
+      </div>
+      <div className="text-red-400 font-bold text-xl">
+        Fechado
+      </div>
+    </div>
+
+  </div>
+</div>
       </div>
     </section>
   )
