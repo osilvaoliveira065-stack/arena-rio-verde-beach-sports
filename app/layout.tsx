@@ -14,10 +14,41 @@ const inter = Inter({
 })
 
 export const metadata: Metadata = {
-  title: 'Arena Rio Verde Beach Sports | Pirassununga/SP',
+  title: 'Arena Rio Verde / Pirassununga/SP',
+
   description:
     'Arena Rio Verde Beach Sports — Futevôlei, Beach Tennis e Beach Volley em Pirassununga/SP. Estrutura completa com 2 quadras de areia, bar, churrasqueira e muito mais.',
-  keywords: 'beach sports, futevôlei, beach tennis, beach volley, Pirassununga, arena esportiva',
+
+  keywords: [
+    'beach sports',
+    'futevôlei',
+    'beach tennis',
+    'beach volley',
+    'Pirassununga',
+    'arena esportiva',
+  ],
+
+  icons: {
+    icon: '/logo.png',
+    shortcut: '/logo.png',
+    apple: '/logo.png',
+  },
+
+  openGraph: {
+    title: 'Arena Rio Verde Beach Sports',
+
+    description:
+      'Futevôlei, Beach Tennis e Beach Volley em Pirassununga/SP.',
+
+    images: [
+      {
+        url: '/logo.png',
+        width: 1024,
+        height: 1024,
+        alt: 'Arena Rio Verde',
+      },
+    ],
+  },
 }
 
 export default function RootLayout({
