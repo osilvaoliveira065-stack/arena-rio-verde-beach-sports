@@ -7,7 +7,8 @@ import app from "@/lib/firebase";
 
 const db = getFirestore(app);
 
-const WHATSAPP_NUMBER = "5519997089898"
+const WHATSAPP_AULAS = "5519991157940"
+const WHATSAPP_ALUGUEL = "5519991157940"
 
 const modalidadesOptions = [
   { value: "", label: "Selecione uma modalidade" },
@@ -22,11 +23,18 @@ export default function Inscricao() {
   const [form, setForm] = useState({
     nome: "",
     telefone: "",
+    interesse: "",
     modalidade: "",
     mensagem: "",
   })
   const [submitted, setSubmitted] = useState(false)
   const [errors, setErrors] = useState<Record<string, string>>({})
+
+const interesseOptions = [
+  { value: "aluguel", label: "Aluguel de Quadra" },
+  { value: "aulas", label: "Aulas" },
+  { value: "experimental", label: "Aula Experimental" },
+]
 
   useEffect(() => {
     const observer = new IntersectionObserver(
@@ -46,9 +54,16 @@ export default function Inscricao() {
     const newErrors: Record<string, string> = {}
     if (!form.nome.trim()) newErrors.nome = "Nome é obrigatório"
     if (!form.telefone.trim()) newErrors.telefone = "Telefone é obrigatório"
+    if (!form.interesse)newErrors.interesse = "Selecione uma opção"
     if (!form.modalidade) newErrors.modalidade = "Selecione uma modalidade"
     return newErrors
   }
+
+  {errors.interesse && (
+  <p className="font-sans text-red-400 text-xs mt-1">
+    {errors.interesse}
+  </p>
+)}
 
   const handleChange = (
     e: React.ChangeEvent<HTMLInputElement | HTMLSelectElement | HTMLTextAreaElement>
@@ -77,6 +92,7 @@ const handleSubmit = async (e: React.FormEvent) => {
     await addDoc(collection(db, "inscricoes"), {
       nome: form.nome,
       telefone: form.telefone,
+      interesse: form.interesse,
       modalidade: form.modalidade,
       mensagem: form.mensagem,
       createdAt: new Date(),
@@ -86,26 +102,64 @@ const handleSubmit = async (e: React.FormEvent) => {
 
   } catch (error) {
     console.error("Erro ao salvar:", error);
+    return;
   }
 
     const modalidadeLabel =
   modalidadesOptions.find((m) => m.value === form.modalidade)?.label ||
   form.modalidade;
 
-const text = `
-Olá! Tenho interesse em me inscrever na Arena Rio Verde Beach Sports.
+let text = "";
 
-\u{1F4CC} *Nome:* ${form.nome}
-\u{1F4DE} *Telefone:* ${form.telefone}
-\u{1F3D0} *Modalidade:* ${modalidadeLabel}
+if (form.interesse === "aluguel") {
+  text = `
+Olá! Tenho interesse em alugar uma quadra na Arena Rio Verde Beach Sports.
 
-\u{1F4AC} *Mensagem:*
-Gostaria de obter mais informações sobre as aulas/treinos e realizar minha inscrição.
+📌 *Nome:* ${form.nome}
+📞 *Telefone:* ${form.telefone}
 
-${form.mensagem ? `\u{1F4DD} *Observações:* ${form.mensagem}` : ""}
+📅 Gostaria de receber informações sobre:
+• Valores
+• Horários disponíveis
+• Reserva da quadra
+
+${form.mensagem ? `📝 *Observações:* ${form.mensagem}` : ""}
 
 Obrigado!
 `.trim();
+}
+
+else if (form.interesse === "experimental") {
+  text = `
+Olá! Tenho interesse em fazer uma aula experimental.
+
+📌 *Nome:* ${form.nome}
+📞 *Telefone:* ${form.telefone}
+🏐 *Modalidade:* ${modalidadeLabel}
+
+Gostaria de agendar uma aula experimental e conhecer a arena.
+
+${form.mensagem ? `📝 *Observações:* ${form.mensagem}` : ""}
+
+Obrigado!
+`.trim();
+}
+
+else {
+  text = `
+Olá! Tenho interesse nas aulas da Arena Rio Verde Beach Sports.
+
+📌 *Nome:* ${form.nome}
+📞 *Telefone:* ${form.telefone}
+🏐 *Modalidade:* ${modalidadeLabel}
+
+Gostaria de receber informações sobre horários, valores e disponibilidade das aulas.
+
+${form.mensagem ? `📝 *Observações:* ${form.mensagem}` : ""}
+
+Obrigado!
+`.trim();
+}
 
 // força UTF-8 corretamente
 const message = new URLSearchParams({
@@ -113,15 +167,13 @@ const message = new URLSearchParams({
 }).toString();
 
 window.open(
-  `https://api.whatsapp.com/send?phone=${WHATSAPP_NUMBER}&${message}`,
+  `https://api.whatsapp.com/send?phone=${WHATSAPP_AULAS}&${message}`,
   "_blank"
 );
 
 setSubmitted(true);
 
-    window.open(`https://wa.me/${WHATSAPP_NUMBER}?text=${message}`, "_blank")
-    setSubmitted(true)
-  }
+}
 
   if (submitted) {
     return (
@@ -137,7 +189,10 @@ setSubmitted(true);
               Você está sendo redirecionado para o WhatsApp. Em breve nossa equipe entrará em contato!
             </p>
             <button
-              onClick={() => setSubmitted(false)}
+              onClick={() => {
+  setSubmitted(false)
+  console.log("voltou")
+}}
               className="font-display font-bold text-sm uppercase tracking-widest px-6 py-3 rounded-full border border-arena-green/40 text-arena-green hover:bg-arena-green/10 transition-colors"
             >
               Voltar ao formulário
@@ -262,6 +317,29 @@ setSubmitted(true);
                 )}
               </div>
 
+              <div className="mb-5">
+  <label className="block font-display text-xs font-semibold tracking-widest uppercase text-arena-white/70 mb-2">
+    O que você procura? *
+  </label>
+
+  <select
+    name="interesse"
+    value={form.interesse}
+    onChange={handleChange}
+    className="w-full bg-arena-bg border border-arena-border rounded-xl px-4 py-3.5"
+  >
+    <option value="">Selecione</option>
+
+    {interesseOptions.map((item) => (
+      <option key={item.value} value={item.value}>
+        {item.label}
+      </option>
+    ))}
+  </select>
+</div>
+
+{form.interesse !== "aluguel" && (
+  <div className="mb-5">
               {/* Modalidade */}
               <div className="mb-5">
                 <label className="block font-display text-xs font-semibold tracking-widest uppercase text-arena-white/70 mb-2">
@@ -286,6 +364,8 @@ setSubmitted(true);
                   <p className="font-sans text-red-400 text-xs mt-1">{errors.modalidade}</p>
                 )}
               </div>
+              </div>
+)}
 
               {/* Mensagem */}
               <div className="mb-7">
