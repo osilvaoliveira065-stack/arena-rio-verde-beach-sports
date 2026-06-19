@@ -4,9 +4,9 @@ import { useEffect, useRef } from "react"
 import { MapPin, Clock, Navigation2, Phone } from "lucide-react"
 
 const horarios = [
-  { dia: "Segunda a Sexta", horario: "07h às 22h" },
-  { dia: "Sábado", horario: "08h às 20h" },
-  { dia: "Domingo e Feriados", horario: "08h às 14h" },
+  { dia: "Segunda a Sexta", horario: "16h às 23h" },
+  { dia: "Sábado e Feriados", horario: "08h às 12H | 16h às 23h" },
+  { dia: "Domingo", horario: "FECHADA" },
 ]
 
 const MAPS_EMBED =
@@ -144,12 +144,12 @@ export default function Localizacao() {
                     Contato
                   </p>
                   <a
-                    href="https://wa.me/5519997089898"
+                    href="https://wa.me/5519991157940"
                     target="_blank"
                     rel="noopener noreferrer"
                     className="font-sans text-arena-white/70 text-sm hover:text-arena-green transition-colors"
                   >
-                    (19) 9 9708 9898
+                    (19) 9 9115 7940
                   </a>
                 </div>
               </div>
