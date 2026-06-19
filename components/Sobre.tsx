@@ -1,7 +1,19 @@
 "use client"
 
 import { useEffect, useRef } from "react"
-import { Waves, Flame, Users, Trophy, Star, MapPin } from "lucide-react"
+import {
+  Waves,
+  Flame,
+  Users,
+  Trophy,
+  Star,
+  MapPin,
+  CalendarDays,
+  CalendarClock,
+  CalendarRange,
+  CalendarX,
+  Clock3,
+} from "lucide-react"
 import Image from "next/image"
 
 const images = [
@@ -257,9 +269,13 @@ export default function Sobre() {
     
     <div className="bg-arena-surface border border-arena-border rounded-2xl p-6 flex justify-between items-center flex-wrap gap-4 hover:border-arena-green/40 hover:shadow-[0_0_30px_rgba(34,197,94,0.15)] transition-all duration-300">
       <div>
-        <h3 className="text-white font-bold text-xl">
-          Segunda à Sexta
-        </h3>
+        <div className="flex items-center gap-3">
+  <CalendarDays className="w-8 h-8 text-arena-green" />
+
+  <h3 className="text-white font-bold text-xl">
+    Segunda à Sexta
+  </h3>
+</div>
       </div>
       <div className="text-arena-green font-bold text-xl">
         16h às 23h
@@ -268,9 +284,13 @@ export default function Sobre() {
 
     <div className="bg-arena-surface border border-arena-border rounded-2xl p-6 flex justify-between items-center flex-wrap gap-4 hover:border-arena-green/40 hover:shadow-[0_0_30px_rgba(34,197,94,0.15)] transition-all duration-300">
       <div>
-        <h3 className="text-white font-bold text-xl">
-          Sábado
-        </h3>
+        <div className="flex items-center gap-3">
+  <CalendarClock className="w-8 h-8 text-arena-green" />
+
+  <h3 className="text-white font-bold text-xl">
+    Sábado
+  </h3>
+</div>
       </div>
       <div className="text-right">
         <p className="text-arena-green font-bold">
@@ -284,9 +304,13 @@ export default function Sobre() {
 
     <div className="bg-arena-surface border border-arena-border rounded-2xl p-6 flex justify-between items-center flex-wrap gap-4 hover:border-arena-green/40 hover:shadow-[0_0_30px_rgba(34,197,94,0.15)] transition-all duration-300">
       <div>
-        <h3 className="text-white font-bold text-xl">
-          Feriados
-        </h3>
+        <div className="flex items-center gap-3">
+  <CalendarRange className="w-8 h-8 text-arena-green" />
+
+  <h3 className="text-white font-bold text-xl">
+    Feriados
+  </h3>
+</div>
       </div>
       <div className="text-right">
         <p className="text-arena-green font-bold">
@@ -300,9 +324,13 @@ export default function Sobre() {
 
     <div className="bg-arena-surface border border-red-500/20 rounded-2xl p-6 flex justify-between items-center flex-wrap gap-4 hover:border-arena-green/40 hover:shadow-[0_0_30px_rgba(34,197,94,0.15)] transition-all duration-300">
       <div>
-        <h3 className="text-white font-bold text-xl">
-          Domingo
-        </h3>
+        <div className="flex items-center gap-3">
+  <CalendarX className="w-8 h-8 text-red-400" />
+
+  <h3 className="text-white font-bold text-xl">
+    Domingo
+  </h3>
+</div>
       </div>
       <div className="text-red-400 font-bold text-xl">
         Fechado
