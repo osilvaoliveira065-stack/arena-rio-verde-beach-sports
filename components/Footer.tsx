@@ -83,7 +83,7 @@ export default function Footer() {
             </p>
             <div className="flex flex-col gap-3">
               <a
-                href={`https://wa.me/5519997089898`}
+                href={`https://wa.me/5519991157940`}
                 target="_blank"
                 rel="noopener noreferrer"
                 className="flex items-center gap-3 group"
