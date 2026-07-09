@@ -2,7 +2,7 @@
 
 import { MapPin, Instagram, ArrowUp } from "lucide-react"
 
-const WHATSAPP_NUMBER = "5519997089898"
+const WHATSAPP_NUMBER = "5519991157940"
 const INSTAGRAM_URL = "https://www.instagram.com/arenarioverde/"
 
 const links = [
@@ -94,7 +94,7 @@ export default function Footer() {
                   </svg>
                 </div>
                 <span className="font-sans text-arena-white/60 text-sm group-hover:text-arena-green transition-colors">
-                  (19) 9 9078-9898
+                  (19) 9 9115-7940
                 </span>
               </a>
 
