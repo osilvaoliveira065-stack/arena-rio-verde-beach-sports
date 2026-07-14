@@ -16,7 +16,7 @@ const modalidades = [
       "Técnica e tática avançada",
       "Preparação para torneios",
     ],
-    image: "/images/fut.png",
+    image: "/images/2.jpg",
     color: "#22c55e",
     number: "01",
   },
@@ -32,7 +32,7 @@ const modalidades = [
       "Aulas para iniciantes",
       "Campeonatos mensais",
     ],
-    image: "/images/beach.png",
+    image: "/images/beachtennis.jpg",
     color: "#4ade80",
     number: "02",
   },
@@ -48,7 +48,7 @@ const modalidades = [
       "Treinos funcionais",
       "Amistosos e torneios",
     ],
-    image: "/images/vollei.png",
+    image: "/images/volley.jpg",
     color: "#86efac",
     number: "03",
   },
@@ -106,7 +106,7 @@ export default function Modalidades() {
           </div>
           <h2 className="font-display font-black text-[clamp(2.5rem,5vw,4.5rem)] uppercase leading-none text-arena-white text-balance">
             Escolha sua <span className="text-gradient-green">Paixão</span>
-          </h2>
+          </h2> 
           <p className="font-sans text-arena-white/60 text-base sm:text-lg max-w-xl mx-auto mt-4 leading-relaxed">
             Três modalidades incríveis, um único destino. Venha descobrir o esporte que vai mudar sua vida.
           </p>
@@ -128,6 +128,7 @@ export default function Modalidades() {
   src={mod.image}
   alt={mod.name}
   fill
+    sizes="100vw"
   className="object-cover transition-transform duration-700 group-hover:scale-105"
 />
                 <div className="absolute inset-0 bg-gradient-to-t lg:bg-gradient-to-r from-arena-bg/90 via-arena-bg/30 to-transparent" />
