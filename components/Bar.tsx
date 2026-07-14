@@ -6,19 +6,19 @@ import Image from "next/image"
 
 const galleryImages = [
   {
-    src: "/images/bar1.jpg",
+    src: "/images/comida1.jpg",
     alt: "Lanche artesanal",
   },
   {
-    src: "/images/bar2.jpg",
+    src: "/images/cerveja.jpg", 
     alt: "Drinks e bebidas",
   },
   {
-    src: "/images/bar3.jpg",
+    src: "/images/cerveja2.jpg",
     alt: "Churrasqueira",
   },
   {
-    src: "/images/bar4.jpg",
+    src: "/images/comida2.jpg",
     alt: "Ambiente social",
   },
 ]
