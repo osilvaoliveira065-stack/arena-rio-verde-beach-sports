@@ -2,45 +2,46 @@
 
 import { useEffect, useRef, useState } from "react"
 import { ChevronLeft, ChevronRight, X } from "lucide-react"
+import Image from "next/image"
 
-const images = [
+const images = [ 
   {
-    src: "https://placehold.co/800x600?text=Quadra+de+beach+tennis+profissional+com+rede+oficial+e+areia+branca+fina+iluminada+por+refletores+noturnos",
+    src: "/gallery/beach_tennis.jpg",
     alt: "Quadra de beach tennis com areia e iluminação noturna",
     label: "Beach Tennis",
   },
   {
-    src: "https://placehold.co/800x600?text=Jogadores+de+futevolei+treinando+em+dupla+na+areia+com+tecnica+acrobatica+e+sol+ao+fundo",
+    src: "/gallery/futvolley.jpg",
     alt: "Treino de futevôlei em dupla com acrobacias",
     label: "Futevôlei",
   },
   {
-    src: "https://placehold.co/800x600?text=Vista+panoramica+da+arena+esportiva+com+duas+quadras+de+areia+bar+e+churrasqueira+ao+fundo",
+    src: "/gallery/beach_volley.jpg",
+    alt: "Vista panorâmica da Arena Rio Verde",
+    label: "beach volley",
+  },
+  {
+    src: "/gallery/nigth.png",
     alt: "Vista panorâmica da Arena Rio Verde",
     label: "Estrutura",
   },
   {
-    src: "https://placehold.co/800x600?text=Torneio+de+beach+volley+com+publico+assistindo+ao+redor+das+quadras+em+dia+ensolarado",
-    alt: "Torneio de beach volley com público presente",
-    label: "Torneios",
-  },
-  {
-    src: "https://placehold.co/800x600?text=Bar+e+area+de+lazer+do+clube+com+mesas+guarda-sois+e+churrasqueira+decorada+ao+ar+livre",
+    src: "/gallery/churrasco.jpg",
     alt: "Bar e área de lazer com churrasqueira",
     label: "Bar & Lazer",
   },
   {
-    src: "https://placehold.co/800x600?text=Grupo+de+alunos+comemorando+vitoria+na+quadra+de+areia+com+sorrisos+e+equipe+unida",
+    src: "/gallery/comunidade.jpg",
     alt: "Alunos comemorando vitória na quadra",
     label: "Comunidade",
   },
   {
-    src: "https://placehold.co/800x600?text=Aula+de+beach+tennis+para+iniciantes+com+professor+ensinando+fundamentos+na+areia",
+    src: "/gallery/aula.jpg",
     alt: "Aula de beach tennis para iniciantes",
     label: "Aulas",
   },
   {
-    src: "https://placehold.co/800x600?text=Pôr+do+sol+sobre+as+quadras+de+areia+com+silhuetas+de+jogadores+e+cores+alaranjadas+no+ceu",
+    src: "/gallery/estrutura.png",
     alt: "Pôr do sol sobre as quadras de areia",
     label: "Ambiente",
   },
