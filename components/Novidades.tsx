@@ -15,7 +15,7 @@ const noticias = [
   },
   {
     badge: "Evento",
-    badgeColor: "#3b82f6",
+    badgeColor: "#3b82f6", 
     title: "Arena Rio Verde recebe noite de beach volley",
     excerpt:
       "Uma noite especial com partidas temáticas, música ao vivo e muita diversão! Convidamos toda a comunidade para participar desse evento único que une esporte e entretenimento.",
@@ -74,7 +74,7 @@ export default function Novidades() {
             </p>
           </div>
           <a
-            href="https://instagram.com/arenariverdebeachsports"
+            href="https://www.instagram.com/arenarioverde/"
             target="_blank"
             rel="noopener noreferrer"
             className="hidden sm:flex items-center gap-2 font-display font-bold text-sm uppercase tracking-widest text-arena-green hover:text-arena-green-light transition-colors group"
@@ -158,7 +158,7 @@ export default function Novidades() {
         {/* Mobile - Ver mais */}
         <div className="section-fade flex justify-center mt-8 sm:hidden">
           <a
-            href="https://instagram.com/arenariverdebeachsports"
+            href="https://www.instagram.com/arenarioverde/"
             target="_blank"
             rel="noopener noreferrer"
             className="flex items-center gap-2 font-display font-bold text-sm uppercase tracking-widest text-arena-green hover:text-arena-green-light transition-colors"
